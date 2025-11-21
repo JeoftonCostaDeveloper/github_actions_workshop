@@ -4,7 +4,13 @@ name: Meu Primeiro CI com github actions
 # Definir o gatilho do nosso workflow
 on:
   push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+  workflow_dispatch:
 # Definir os Jobs
+env:
+  PROJETO_NOME: 'Workshop do Sucesso'
 jobs:
   # Definir o nome do job
   build:
@@ -16,6 +22,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
       # Runs a single command using the runners shell
+      - name: Utilizando variáveis de ambiente
+        run: echo "O projeto em execução é:\ ${{env.PROJETO_NOME}}"
+      # Demonstrando Secrets
+        env:
+          CHAVE_SECRETA: ${{secrets.MINHA_CHAVE_SECRETA}}
+      - name: Demonstrando Secrets
+        run: echo "As secrets não podem ser exibidas:\ ${{env.CHAVE_SECRETA}}"
       - name: Executando script de linha unica
         run: echo Hello, world!
       # Runs a set of commands using the runners shell
