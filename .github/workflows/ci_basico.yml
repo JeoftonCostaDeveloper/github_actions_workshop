@@ -7,6 +7,7 @@ on:
     branches: [develop]
   pull_request:
     branches: [develop]
+  workflow_dispatch:
 # Definir os Jobs
 env:
   PROJETO_NOME: 'Workshop do Sucesso'
