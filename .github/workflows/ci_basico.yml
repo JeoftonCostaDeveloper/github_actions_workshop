@@ -3,38 +3,35 @@ name: Meu Primeiro CI com github actions
 
 # Definir o gatilho do nosso workflow
 on:
-  push
+  push:
 # Definir os Jobs
 jobs:
-    # Definir o nome do job
+# Definir o nome do job
   build:
     name: Job de Build
-        # O executor
-    runs-on: ubuntu-latest
-    
-    # Passos
+# O executor
+    runs-on: ubuntu-latest    
+# Passos
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v4
-
-      # Runs a single command using the runners shell
-    - name: Executando script de linha unica
-      run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-    - name: Executando script em múltiplas linhas
-      run: |
-        echo "YAML Corrigido"
-        echo "Concluíndo Job de Build".
+# Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+# Runs a single command using the runners shell
+      - name: Executando script de linha unica
+        run: echo Hello, world!
+# Runs a set of commands using the runners shell
+      - name: Executando script em múltiplas linhas
+        run: |
+          echo "YAML Corrigido"
+          echo "Concluíndo Job de Build."
 
   test:
     needs: build
     name: Job de Teste
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Teste 01
-      run: echo "Testando sistema"
+      - uses: actions/checkout@v4
+      - name: Teste 01
+        run: echo "Testando sistema"
 
 			
 
