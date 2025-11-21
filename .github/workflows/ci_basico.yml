@@ -4,6 +4,7 @@ name: Meu Primeiro CI com github actions
 # Definir o gatilho do nosso workflow
 on:
   push:
+    branches: [develop]
 # Definir os Jobs
 jobs:
   # Definir o nome do job
