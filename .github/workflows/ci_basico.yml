@@ -33,8 +33,9 @@ jobs:
     name: Job de Teste
     runs-on: ubuntu-latest
     steps:
-      - name: Teste 01
-        run: echo "Testando sistema"
+    - name: Teste 01
+      run: echo "Testando sistema"
+
 			
 
 
