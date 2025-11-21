@@ -5,6 +5,8 @@ name: Meu Primeiro CI com github actions
 on:
   push:
     branches: [develop]
+  pull_request:
+    branches: [develop]
 # Definir os Jobs
 jobs:
   # Definir o nome do job
