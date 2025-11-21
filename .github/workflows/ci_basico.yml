@@ -1,5 +1,5 @@
 # Nome do Nosso Workflow
-name: Meu Primeiro CI
+name: Meu Primeiro CI com github actions
 # Definir o gatilho do nosso workflow
 on:
     push
@@ -7,20 +7,19 @@ on:
 jobs:
     # Definir o nome do job
     build:
+        name: Job de Build
         # O executor
         runs-on: ubuntu-latest
     
     # Passos
-    steps:
-        
-        - uses: actions/checkout@v4
-
+    steps:        
+        uses: actions/checkout@v4
         # Identificando nossos passaos de execução
-        - name: Run a one-line script
-          run: echo Hello, world!
-        
-        - name: Run a multi-line script
-          run: |
+        name: Run a one-line script
+        run: echo Hello, world!
+
+        name: Run a multi-line script
+        run: |
             echo Add other actions to build,
             echo test, and deploy your project.
         
