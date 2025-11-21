@@ -8,6 +8,8 @@ on:
   pull_request:
     branches: [develop]
 # Definir os Jobs
+env:
+  PROJETO_NOME: 'Workshop do Sucesso'
 jobs:
   # Definir o nome do job
   build:
@@ -19,6 +21,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
       # Runs a single command using the runners shell
+      - name: Utilizando variáveis de ambiente
+        run: echo "O projeto em execução é:\ ${{env.PROJETO_NOME}}"
       - name: Executando script de linha unica
         run: echo Hello, world!
       # Runs a set of commands using the runners shell
