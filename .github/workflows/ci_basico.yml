@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 # Definir os Jobs
 env:
-  PROJETO_NOME: 'Workshop do Sucesso'
+  PROJETO_NOME: 'Workshop do Sucesso - V2'
 jobs:
   # Definir o nome do job
   build:
