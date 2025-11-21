@@ -22,7 +22,7 @@ jobs:
       - name: Executando script em múltiplas linhas
         run: |
           echo "YAML Corrigido"
-          echo "Concluíndo Job de Build."
+          echo "Concluíndo Job de Build"
 
   test:
     needs: build
